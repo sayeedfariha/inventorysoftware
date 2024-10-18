@@ -6,7 +6,7 @@ function Sidebar() {
     <aside className="bg-black w-60 text-white sticky top-0 left-0 bottom-0 h-[100vh]">
 
         <div className="logo">
-          inventory
+          INVENTORY
         </div>
 
         <div className="links">
