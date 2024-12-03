@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function BalanceSheet() {
+export default function page() {
   return (
     <div>
-      balancesheet
+      sub
     </div>
   )
 }

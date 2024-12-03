@@ -6,6 +6,7 @@ import {Bell } from 'lucide-react';
 import { Settings} from 'lucide-react';
 import { User} from 'lucide-react';
 
+
 export default function Header() {
   return (
     <header className ="bg-slate-200 w-full h-16 sticky top-0  bg-pink-500 flex items-center px-4 border-b border-slate-200 shadow">
@@ -38,6 +39,7 @@ export default function Header() {
      className="absolute z-10 invisible inline-block px-2 py-1 text-sm font-medium text-cyan-700 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
     Tooltip on bottom
      <div className="tooltip-arrow" data-popper-arrow></div>
+     
     </div>
           
         </div>

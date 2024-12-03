@@ -9,7 +9,7 @@ import {ClipboardList } from 'lucide-react';
 import {BarChart } from 'lucide-react';
 import { Tag } from 'lucide-react';
 import {ChevronRight } from 'lucide-react';
-import { Plus } from 'lucide-react';
+import { Minus } from 'lucide-react';
 import { CreditCard } from 'lucide-react';
 import { Scale } from 'lucide-react';
 import { FileClock } from 'lucide-react';
@@ -41,6 +41,10 @@ function Sidebar() {
        </div>
 
         {/*links*/}
+        <li><Link href="http://localhost:3000/user" className="brand flex items-center cursor-pointer hover:bg-slate-800 rounded-md gap-4 p-3
+            "><Tag className="w-6 h-6 mr-2" />
+              <span>User</span>
+              </Link></li>
         <div className="  links ">
           <ul className="flex flex-col space-y-2 px-3 py-6 gap-2">
            <li><Link href="http://localhost:3000" className="Home flex items-center cursor-pointer hover:bg-slate-800 rounded-md gap-4 p-3  ">
@@ -64,16 +68,16 @@ function Sidebar() {
              <ChevronRight /></CollapsibleTrigger>
                 <CollapsibleContent>
                 <div className='flex items-center justify-between px-3'>
-                <Link href="http://localhost:3000/product/items" className=" flex items-center  gap-4 p-3 justify-between px-3 hover:bg-slate-800 rounded-md
-            "><span >Items</span>
-            <ShoppingCart />
+                <Link href="http://localhost:3000/product/Product_category&info" className=" flex items-center  gap-4 p-3 justify-between px-3 hover:bg-slate-800 rounded-md
+            "> <ShoppingCart /><span >Product Category and Info</span>
+           
             
             </Link>
          </div>
          <div className='flex items-center justify-between px-3'>
-                <Link href="http://localhost:3000/product/AddItems" className=" flex items-center  gap-4 p-3 justify-between px-3 hover:bg-slate-800 rounded-md
-            "><span >Add Items</span>
-            <Plus />
+                <Link href="http://localhost:3000/product/Product_sub_category" className=" flex items-center  gap-4 p-3 justify-between px-3 hover:bg-slate-800 rounded-md
+            "> <Minus /><span >Product Sub Category</span>
+           
             </Link>
          </div>
                   
@@ -92,37 +96,21 @@ function Sidebar() {
               <span>Brands</span>
               </Link></li>
 
+              <li><Link href="http://localhost:3000/model" className="brand flex items-center cursor-pointer hover:bg-slate-800 rounded-md gap-4 p-3
+            "><Tag className="w-6 h-6 mr-2" />
+              <span>Models</span>
+              </Link></li>
 
-              <Collapsible>
-             <CollapsibleTrigger className="flex items-center gap-2 p-3 Report  cursor-pointer hover:bg-slate-800 rounded-md ">
-             <BarChart className="w-6 h-6 mr-2" />
-             <span>Report</span>
-             <ChevronRight />
+
+
+
+              
              
-            </CollapsibleTrigger>
-                <CollapsibleContent>
-                <div className='flex items-center justify-between px-3'>
-                <Link href="http://localhost:3000/Report/payment" className=" flex items-center  gap-4 p-3 justify-between px-3 hover:bg-slate-800 rounded-md
-            "><span >Payment</span>
-            <CreditCard />
+           
             
-            </Link>
-         </div>
-         <div className='flex items-center justify-between px-3'>
-                <Link href="http://localhost:3000/Report/balancesheet" className=" flex items-center  gap-4 p-3 justify-between px-3 hover:bg-slate-800 rounded-md
-            "><span >Balance Sheet</span>
-            <Scale />
-            </Link>
-         </div>
-         <div className='flex items-center justify-between px-3'>
-                <Link href="http://localhost:3000/Report/transactionHistory" className=" flex items-center  gap-4 p-3 justify-between px-3 hover:bg-slate-800 rounded-md
-            "><span >Transaction History</span>
-            <FileClock />
-            </Link>
-         </div>
-                  
-          </CollapsibleContent>
-            </Collapsible>
+            
+        
+         
 
              
       

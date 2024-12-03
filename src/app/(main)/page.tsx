@@ -1,12 +1,21 @@
+"use client"
 import Image from "next/image";
 import { CreditCard, Activity, BarChart2, PieChart, Check, CheckCircle2, Link } from 'lucide-react';
 import React from 'react';
-import { Bar } from "react-chartjs-2";
+import { Bar as ChartJSBar } from "react-chartjs-2";
 import {Chart as ChartJS}from "react-chartjs-2";
 import { title } from "process";
 import { color } from "chart.js/helpers";
+import { TrendingUp } from "lucide-react";
+import { Bar as RechartsBar, BarChart, CartesianGrid, XAxis } from "recharts";
 
 
+const chartData = [
+   { week: 'Week 1', sales: 500, revenue: 700 },
+   { week: 'Week 2', sales: 400, revenue: 600 },
+   { week: 'Week 3', sales: 600, revenue: 800 },
+   { week: 'Week 4', sales: 700, revenue: 900 },
+];
 export default function Dashboard() {
    const salesActivity =[
       {
@@ -100,6 +109,21 @@ export default function Dashboard() {
       </div>
 
       </div>
+      
+      <div className="h-[200px] w-full ">
+         <h1 className="font-semibold">Profit this week </h1>
+            <BarChart width={500} height={300} data={chartData} className="bg-gray-100">
+               <CartesianGrid vertical={false} />
+               <XAxis
+                dataKey="week" tickLine={false} 
+                tickMargin={10} 
+                axisLine={false} />
+                tickFormatter={(value) => value.slice(0, 3)} 
+                
+               <RechartsBar dataKey="sales" fill="var(--color-sales)" radius={4} />
+               <RechartsBar dataKey="revenue" fill="var(--color-revenue)" radius={4} />
+            </BarChart>
+         </div>
      </div>
    
 

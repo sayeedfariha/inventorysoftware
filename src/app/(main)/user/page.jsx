@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function payment() {
+export default function page() {
   return (
     <div>
-      payment
+      user
     </div>
   )
 }
+
