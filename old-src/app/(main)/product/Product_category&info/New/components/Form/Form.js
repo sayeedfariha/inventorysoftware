@@ -1,62 +1,65 @@
-import React from 'react'
+import React from "react";
+
 function Form() {
   return (
-    <div className="flex flex-col gap-2 w-1/4  justify-center p-6">
+    <div className="flex flex-col gap-2 w-1/4">
       <label>ID</label>
       <input
         className="bg-neutral-300 p-2 text-lg rounded-md"
         type="text"
         placeholder="ID"
       />
-      <label>Invoice ID</label>
+      <label>Product Name</label>
       <input
         className="bg-neutral-300 p-2 text-lg rounded-md"
         type="text"
-        placeholder="Invoice ID"
+        placeholder="Product Name"
       />
-      <label>Customer Name</label>
+      <label>Image</label>
       <input
         className="bg-neutral-300 p-2 text-lg rounded-md"
-        type="Text"
-        placeholder="Customer Name"
+        type="Image"
+        placeholder="Image"
       />
-     
-      <label>Customer Email</label>
-      <input
-        className="bg-neutral-300 p-2 text-lg rounded-md"
-        type="text"
-        placeholder="Customer Email"
-      />
-      <label>Discount</label>
+      <label>Category</label>
+      <select name="Category" id="" className="bg-neutral-300 p-2 text-lg rounded-md">
+        <option value="Null">Null</option>
+      </select>
+      <label>Sub Category ID</label>
       <input
         className="bg-neutral-300 p-2 text-lg rounded-md"
         type="text"
-        placeholder="Discount"
+        placeholder="Sub Category ID"
       />
-      <label>Due</label>
+      <label>Brand ID</label>
       <input
         className="bg-neutral-300 p-2 text-lg rounded-md"
         type="text"
-        placeholder="Due"
+        placeholder="Brand ID"
       />
-      <label>Customer Mobile</label>
+      <label>Model ID</label>
       <input
         className="bg-neutral-300 p-2 text-lg rounded-md"
         type="text"
-        placeholder="Customer Mobile"
+        placeholder="Model ID"
       />
-      
+      <label>Product Price</label>
+      <input
+        className="bg-neutral-300 p-2 text-lg rounded-md"
+        type="text"
+        placeholder="Product Price"
+      />
+      <label>Quantity</label>
+      <input
+        className="bg-neutral-300 p-2 text-lg rounded-md"
+        type="text"
+        placeholder="Quantity"
+      />
       <label></label>
       <input
         className="bg-neutral-300 p-2 text-lg rounded-md"
         type="text"
         placeholder="Created by"
-      />
-      <label></label>
-      <input
-        className="bg-neutral-300 p-2 text-lg rounded-md"
-        type="text"
-        placeholder="Created Date"
       />
       <label></label>
       <input
@@ -70,7 +73,6 @@ function Form() {
         type="text"
         placeholder="Modified Date"
       />
-      <button className="bg-slate-400 p-2 w-20 rounded-md">Save</button>
     </div>
   );
 }

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import AppSidebar from "./components/Sidebar/Sidebar";
+import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Navbar/Header";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,16 +16,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <body className="flex">
-        <SidebarProvider>
-          <AppSidebar />
-          <main className="w-full">
+        <Sidebar />
+        <main className="w-full">
+          
+          <Header />
 
-            <Header />
+          <div className="h-100 ">
+            {children}
+          </div>
 
-            <div className="h-100 ">{children}</div>
-          </main>
-        </SidebarProvider>
+         
+
+        </main>
+        
+
+
+
       </body>
     </html>
   );

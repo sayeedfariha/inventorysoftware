@@ -22,7 +22,7 @@ export default function Items() {
       </div>
 
       <div className="flex flex-col p-4">
-        <div className="flex justify-between items-center w-full h-28 px-4 bg-slate-100 rounded-xl">
+        <div className="flex justify-between items-center w-full h-28 px-4 bg-neutral-300 rounded-xl">
           <div className="flex gap-8">
              <b>Product ID: </b>
              <b>Product Name</b>
@@ -30,8 +30,8 @@ export default function Items() {
           </div>
           
           <div className="flex gap-4">
-            <button className="bg-slate-300 p-2 rounded-md">Edit</button>
-            <button className="bg-slate-300 p-2 rounded-md">Delete</button>
+            <button>Edit</button>
+            <button className="bg-red-600 p-2 rounded-md">Delete</button>
           </div>
         </div>
       </div>
