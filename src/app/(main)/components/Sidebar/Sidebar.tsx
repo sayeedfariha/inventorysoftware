@@ -1,3 +1,4 @@
+'use client'
 import {
   Calendar,
   Home,
@@ -15,6 +16,7 @@ import {
   ShoppingBasket,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import {
   Sidebar,
@@ -36,7 +38,11 @@ import {
 } from "@/components/ui/collapsible";
 
 // Menu items.
-const items = [
+const items = [{
+    title: "Home",
+    url: "/",
+    icon: Home,
+  },
   {
     title: "User",
     url: "#",
@@ -46,14 +52,10 @@ const items = [
         title: "User",
         url: "/user",
       },
-      { title: "User Role", url: "/User_Role" },
+      { title: "User Role", url: "/user/User_Role" },
     ],
   },
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
+  
   {
     title: "Sales",
     url: "/Sales",
@@ -90,21 +92,24 @@ const items = [
     title: "Models",
     url: "/model",
     icon: Component,
+    
   },
 ];
 
 export default function AppSidebar() {
+  const pathname = usePathname(); // Get the current route
+
   return (
     <Sidebar>
-      <header className="px-2 py-4">
+      <header className="px-2 py-4 ">
         <Link
           href={"/"}
-          className="flex gap-2 items-center p-2 rounded-xl hover:bg-slate-300"
+          className="flex gap-2 items-center p-2 rounded-xl hover:bg-neutral-300"
         >
           <CircleUserRound className="w-10 h-10" />
           <div>
             <h2 className="text-md font-bold">Inventory</h2>
-            <h4 className="text-xs text-neutral-400">Software</h4>
+            <h4 className="text-xs text-neutral-400">Role</h4>
           </div>
         </Link>
       </header>
@@ -121,7 +126,7 @@ export default function AppSidebar() {
                     >
                       <CollapsibleTrigger asChild>
                         <SidebarMenuButton asChild>
-                          <div className="flex items-center cursor-pointer">
+                          <div className="flex items-center select-none cursor-pointer">
                             <item.icon className="mr-2" />
                             <span>{item.title}</span>
                           </div>
@@ -131,7 +136,14 @@ export default function AppSidebar() {
                         <SidebarMenuSub>
                           {item.subItems.map((subItem) => (
                             <SidebarMenuSubItem key={subItem.title}>
-                              <a href={subItem.url} className="block pl-8">
+                              <a
+                                href={subItem.url}
+                                className={`block p-1 mb-1 rounded-md select-none ${
+                                  pathname === subItem.url
+                                    ? "bg-neutral-200 text-blue-600"
+                                    : ""
+                                }`}
+                              >
                                 {subItem.title}
                               </a>
                             </SidebarMenuSubItem>
@@ -142,7 +154,14 @@ export default function AppSidebar() {
                   ) : (
                     // Non-collapsible items
                     <SidebarMenuButton asChild>
-                      <a href={item.url} className="flex items-center">
+                      <a
+                        href={item.url}
+                        className={`flex items-center ${
+                          pathname === item.url
+                            ? "bg-neutral-200 text-blue-600"
+                            : ""
+                        }`}
+                      >
                         <item.icon className="mr-2" />
                         <span>{item.title}</span>
                       </a>

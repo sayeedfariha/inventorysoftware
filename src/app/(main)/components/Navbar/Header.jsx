@@ -9,25 +9,24 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export default function Header() {
   return (
-    <header className="bg-slate-200 w-full h-16 sticky top-0  bg-pink-500 flex items-center justify-between px-4 border-b border-slate-200 shadow">
+    <header className="sticky top-0 bg-slate-100 w-full h-16 flex items-center justify-between px-4 border-b border-slate-200 z-[1000]">
       <SidebarTrigger />
 
       <div className="relative">
-        <div>
+        <div className="flex items-center gap-2">
+          {/* Notification Button */}
+          <button className="p-2 rounded hover:bg-blue-200 transition">
+            <Bell className="w-6 h-6 text-blue-600" /> {/* Notification Icon */}
+          </button>
+          <button className="p-2 rounded hover:bg-blue-200 transition">
+            <Settings className="w-6 h-6 text-blue-600" /> {/* Settings Icon */}
+          </button>
           <button
             data-tooltip-target="tooltip-bottom"
             data-tooltip-placement="bottom"
             type="button"
-            className="ms-3 mb-2 md:mb-0 text-white bg-slate-300 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
-          >
-            <Plus />
-          </button>
-          {/* Notification Button */}
-          <button className="p-2 rounded hover:bg-pink-400 transition">
-            <Bell className="w-6 h-6 text-cyan-700" /> {/* Notification Icon */}
-          </button>
-          <button className="p-2 rounded hover:bg-pink-400 transition">
-            <Settings className="w-6 h-6 text-cyan-700" /> {/* Settings Icon */}
+            className="p-1 ml-2 rounded hover:bg-blue-200 transition bg-blue-600">
+            <Plus className="w-6 h-6 text-white"  />
           </button>
 
           <div

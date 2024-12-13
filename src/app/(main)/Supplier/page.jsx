@@ -1,6 +1,7 @@
 import React from 'react'
 function Form() {
   return (
+    <div className='flex justify-center w-full'>
     <div className="flex flex-col gap-2 w-1/4  justify-center p-6">
       <label>ID</label>
       <input
@@ -38,6 +39,7 @@ function Form() {
       
       
       <button className="bg-slate-400 p-2 w-20 rounded-md">Save</button>
+    </div>
     </div>
   );
 }
